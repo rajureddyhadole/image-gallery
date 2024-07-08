@@ -1,12 +1,15 @@
 import React from 'react'
 
 function ImageCard( { image } ) {
+
+	const tags = image.tags.split(',');
+
   return (
-    <div className='max-w-sm rounded overflow-hidden shadow-lg min-h-sm'>
+    <div className='max-w-sm overflow-hidden rounded shadow-lg'>
         <img src={image.webformatURL} alt="" className='w-full'/>
 
     	<div className='px-6 py-4'>
-				<div className='font-semibold text-purple-500 px-4 py-2'>
+				<div className='px-4 py-2 font-semibold text-purple-500'>
 					Photo by {image.user}
 				</div>
 
@@ -17,11 +20,7 @@ function ImageCard( { image } ) {
 				</ul>
 
 				<div>
-					<span className='bg-slate-200 inline-block text-gray-500 font-medium px-4 py-1 rounded-full mx-2 mb-2'>#tag1</span>
-					<span className='bg-slate-200 inline-block text-gray-500 font-medium px-4 py-1 rounded-full mx-2 mb-2'>#tag2</span>
-
-					<span className='bg-slate-200 inline-block text-gray-500 font-medium px-4 py-1 rounded-full mx-2 mb-2'>#tag3</span>
-
+					{tags.map((tag, index) => <span key={index} className='inline-block px-4 py-1 mx-2 mb-2 font-medium text-gray-500 rounded-full cursor-pointer bg-slate-200'>{tag}</span>)}
 				</div>
 			</div>
       

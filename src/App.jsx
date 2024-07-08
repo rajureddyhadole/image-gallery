@@ -10,7 +10,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const searchImages = async (name) => {
-    const response = await fetch(`https://pixabay.com/api/?key=${API_KEY}&q=${searchTerm}&image_type=photo&pretty=true`);
+    const response = await fetch(`https://pixabay.com/api/?key=${API_KEY}&q=${name}&image_type=photo&pretty=true`);
 
     const data = await response.json();
 
@@ -24,7 +24,10 @@ function App() {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}/>
         <button className='px-2 py-1 text-white bg-blue-500 rounded shadow-lg hover:bg-blue-600'
-        onClick={() => {searchImages(searchTerm)}}>Search</button>
+        onClick={() => {
+          searchImages(searchTerm);
+          setIsLoading(false);
+        }}>Search</button>
       </div>
 
       <div className='grid grid-cols-3 gap-1 mt-2'>
