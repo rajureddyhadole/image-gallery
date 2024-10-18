@@ -18,7 +18,7 @@ function App() {
   }
 
   useEffect(() => {
-    searchImages('dogs');
+    searchImages(''); //i left it empty on purpose
   }, []);
 
   return (
@@ -35,7 +35,7 @@ function App() {
       </div>
 
       <div className='flex justify-center'>
-        <div className='grid items-center grid-cols-1 gap-4 mt-2 sm:grid-cols-2 lg:grid-cols-3'>
+        <div className='gap-4 columns-1 sm:columns-2 lg:columns-3'>
           {images.map(image => (
             <ImageCard key={image.id} image={image} />))}
         </div>

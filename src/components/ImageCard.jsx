@@ -5,7 +5,7 @@ function ImageCard({ image }) {
 	const tags = image.tags.split(',');
 
 	return (
-		<div className='max-w-sm overflow-hidden rounded shadow-lg'>
+		<div className='max-w-sm mb-4 overflow-hidden rounded shadow-lg shadow-black/40'>
 			<img src={image.webformatURL} alt="" className='w-full' />
 
 			<div className='px-6 py-4'>
