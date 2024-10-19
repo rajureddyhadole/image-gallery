@@ -35,7 +35,7 @@ function App() {
       </div>
 
       <div className='flex justify-center'>
-        <div className='gap-4 columns-1 sm:columns-2 lg:columns-3'>
+        <div className='gap-4 mx-4 columns-1 sm:columns-2 lg:columns-3'>
           {images.map(image => (
             <ImageCard key={image.id} image={image} />))}
         </div>
